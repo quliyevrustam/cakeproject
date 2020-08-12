@@ -43,6 +43,7 @@ use Cake\Routing\Route\DashedRoute;
  * constructor in your `src/Application.php` file to change this behavior.
  *
  */
+
 Router::defaultRouteClass(DashedRoute::class);
 
 Router::scope('/', function (RouteBuilder $routes) {
@@ -69,6 +70,8 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
+    // $routes->connect('/articles', ['controller' => 'Articles', 'action' => 'display']);
+
     /*
      * Connect catchall routes for all controllers.
      *
@@ -90,7 +93,6 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->fallbacks(DashedRoute::class);
 });
-
 /*
  * If you need a different set of middleware or none at all,
  * open new scope and define routes there.
